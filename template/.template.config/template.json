@@ -1,0 +1,22 @@
+{
+  "author": "MyJetEducation",
+  "classifications": [ "MyJetEducationTutorialService" ],
+  "name": "MyJetEducationTutorialService",
+  "identity": "MyJetEducationTutorialService",
+  "shortName": "myjeteducationtutorialservice",
+  "preferNameDirectory": "true",
+  "tags": {
+    "language": "C#"
+  },
+  "sourceName": "TutorialBehavioral",
+  "symbols": {
+    "clientSecretsId": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "user-secrets-id",
+      "parameters": {
+        "format":"N"
+      }
+    }
+  }
+}

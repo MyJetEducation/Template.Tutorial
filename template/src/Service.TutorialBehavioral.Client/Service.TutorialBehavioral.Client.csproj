@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference PrivateAssets="All" Include="..\Service.TutorialBehavioral.Grpc\Service.TutorialBehavioral.Grpc.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference PrivateAssets="All" Include="Autofac" Version="6.3.0" />
+    <PackageReference PrivateAssets="All" Include="Grpc.Core.Api" Version="2.44.0" />
+    <PackageReference PrivateAssets="All" Include="JetBrains.Annotations" Version="2022.1.0-eap3" />
+    <PackageReference PrivateAssets="All" Include="Grpc.Net.Client" Version="2.44.0" />
+    <PackageReference PrivateAssets="All" Include="MyJetWallet.Sdk.Grpc" Version="2.0.0" />
+    <PackageReference PrivateAssets="All" Include="System.ServiceModel.Primitives" Version="4.9.0" />
+    <PackageReference PrivateAssets="All" Include="protobuf-net.Grpc" Version="1.0.152" />
+    <PackageReference PrivateAssets="All" Include="MyJetEducation.Service.Grpc" Version="1.0.7" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>
+      $(TargetsForTfmSpecificBuildOutput);PackReferencedProjectOutputs
+    </TargetsForTfmSpecificBuildOutput>
+    <PackageId>MyJetEducation.Service.TutorialBehavioral.Client</PackageId>
+    <Authors>MyJetEducation</Authors>
+    <Company>MyJetEducation</Company>
+    <Product>MyJetEducation</Product>
+    <PackageProjectUrl>https://github.com/MyJetEducation/Service.TutorialBehavioral</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MyJetEducation/Service.TutorialBehavioral</RepositoryUrl>
+  </PropertyGroup>
+
+  <Target Name="PackReferencedProjectOutputs" DependsOnTargets="BuildOnlySettings;ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+    </ItemGroup>
+  </Target>
+
+</Project>
